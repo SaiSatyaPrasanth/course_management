@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-07 15:49:10.258310",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "course_id",
+  "course_name",
+  "price",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "course_id",
+   "fieldtype": "Link",
+   "label": "Course Id",
+   "options": "Courses"
+  },
+  {
+   "fetch_from": "course_id.name1",
+   "fieldname": "course_name",
+   "fieldtype": "Data",
+   "label": "Course Name"
+  },
+  {
+   "fetch_from": "course_id.price",
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fetch_from": "course_id.status",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-07 15:51:31.456435",
+ "modified_by": "Administrator",
+ "module": "Course Management",
+ "name": "Assigned Courses",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

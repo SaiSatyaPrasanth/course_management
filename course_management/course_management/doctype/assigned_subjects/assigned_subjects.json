@@ -1,0 +1,38 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-07 15:54:31.375400",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subject_id",
+  "subject_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "subject_id",
+   "fieldtype": "Link",
+   "label": "Subject Id",
+   "options": "Subject"
+  },
+  {
+   "fetch_from": "subject_id.name1",
+   "fieldname": "subject_name",
+   "fieldtype": "Data",
+   "label": "Subject Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-07 15:57:36.900466",
+ "modified_by": "Administrator",
+ "module": "Course Management",
+ "name": "Assigned Subjects",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

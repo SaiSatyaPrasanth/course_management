@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CH-{####}-{YYYY}",
+ "creation": "2024-12-05 17:29:22.414566",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "youtube_id",
+  "column_break_esmr",
+  "chapter",
+  "vimeo_id",
+  "custom_video_url"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "youtube_id",
+   "fieldtype": "Data",
+   "label": "Youtube Id"
+  },
+  {
+   "fieldname": "vimeo_id",
+   "fieldtype": "Data",
+   "label": "Vimeo Id"
+  },
+  {
+   "default": "Paid",
+   "fieldname": "chapter",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Chapter Type",
+   "options": "Paid\nFree Demo"
+  },
+  {
+   "fieldname": "column_break_esmr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "custom_video_url",
+   "fieldtype": "Data",
+   "label": "Custom Video URL"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-10 17:06:22.495553",
+ "modified_by": "Administrator",
+ "module": "Course Management",
+ "name": "Chapters",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
