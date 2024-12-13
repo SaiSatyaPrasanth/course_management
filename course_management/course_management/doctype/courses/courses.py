@@ -1,7 +1,7 @@
 # Copyright (c) 2024, Prasanth and contributors
 # For license information, please see license.txt
 
-import frappe
+import frappe,requests
 from frappe.model.document import Document
 
 
@@ -47,3 +47,78 @@ def get_all_subject_and_chapters(course_id):
     return all_subjects_and_chapters
 
 
+@frappe.whitelist()
+def generate_course_payment_link(course_id):
+    try:
+        # Fetch the course record
+        course = frappe.get_doc("Courses", course_id)
+        
+        if not course:
+            frappe.throw(f"Course with ID {course_id} not found")
+
+        # Ensure the course has a price
+        if not course.price or course.price <= 0:
+            frappe.throw(f"Course price must be greater than 0")
+
+        # Razorpay credentials
+        key_id = "rzp_test_e664V0FP0zQy7N"
+        key_secret = "QdnuRxUHrPGeiJc9lDTXYPO7"
+        
+        # Razorpay API endpoint
+        url = "https://api.razorpay.com/v1/payment_links"
+        
+        # Payment link data
+        data = {
+            "amount": int(course.price * 100),  # Convert to paise
+            "currency": "INR",
+            "description": f"Payment for course: {course.name}",
+            "callback_url": frappe.utils.get_url(),  # Replace with your callback URL if needed
+            "callback_method": "get",
+        }
+
+
+        data = {
+  "amount": 1000,
+  "currency": "INR",
+  "accept_partial": True,
+  "first_min_partial_amount": 100,
+  "expire_by": 1735128000,
+  "reference_id": "TSsd1725",
+  "description": f"Payment for course: {course.name}",
+  "customer": {
+    "name": "Gaurav Kumar",
+    "contact": "+919000090000",
+    "email": "gaurav.kumar@example.com"
+  },
+  "notify": {
+    "sms": True,
+    "email": True
+  },
+  "reminder_enable": True,
+  "notes": {
+    "policy_name": "Jeevan Bima"
+  },
+  "callback_url": frappe.utils.get_url(),
+  "callback_method": "get"
+}
+        
+        # Make the API request to Razorpay
+        response = requests.post(url, json=data, auth=(key_id, key_secret))
+        response.raise_for_status()
+        payment_data = response.json()
+
+        # Update the course record
+        course.id = payment_data.get("id")
+        course.short_url = payment_data.get("short_url")
+        course.status = payment_data.get("status")
+        course.save()
+
+        # Return the short URL
+        return {"short_url": course.short_url}
+    
+    except frappe.DoesNotExistError:
+        frappe.throw(f"Course with ID {course_id} does not exist")
+    except requests.exceptions.RequestException as e:
+        frappe.throw(f"Error creating payment link: {str(e)}")
+    except Exception as e:
+        frappe.throw(f"An unexpected error occurred: {str(e)}")

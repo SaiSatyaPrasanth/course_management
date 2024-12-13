@@ -17,3 +17,4 @@ def get_home_page_banners():
         return parent_doc
     except frappe.DoesNotExistError:
         frappe.throw("Website Banner Setting record not found")
+

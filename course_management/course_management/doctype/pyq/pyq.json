@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PYQ-{YYYY}-{###}",
+ "creation": "2024-12-13 12:06:58.625887",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "exam_name",
+  "subjects_section",
+  "subjects"
+ ],
+ "fields": [
+  {
+   "fieldname": "exam_name",
+   "fieldtype": "Data",
+   "label": "Exam Name"
+  },
+  {
+   "fieldname": "subjects_section",
+   "fieldtype": "Section Break",
+   "label": "Subjects"
+  },
+  {
+   "fieldname": "subjects",
+   "fieldtype": "Table",
+   "label": "Subjects",
+   "options": "PYQ Subjects"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-13 13:33:58.498055",
+ "modified_by": "Administrator",
+ "module": "Course Management",
+ "name": "PYQ",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Guest",
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

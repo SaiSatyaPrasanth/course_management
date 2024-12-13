@@ -10,9 +10,11 @@
   "thumbnail",
   "title",
   "description",
+  "column_break_cbkq",
   "old_price",
   "new_price",
-  "popularity"
+  "popularity",
+  "start_date"
  ],
  "fields": [
   {
@@ -55,11 +57,20 @@
    "fieldtype": "Select",
    "label": "Popularity",
    "options": "Most Popular\nPopular\nLatest\nAverage Rating"
+  },
+  {
+   "fieldname": "column_break_cbkq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-12 18:30:48.713207",
+ "modified": "2024-12-13 10:43:31.917964",
  "modified_by": "Administrator",
  "module": "Course Management",
  "name": "Courses Page",

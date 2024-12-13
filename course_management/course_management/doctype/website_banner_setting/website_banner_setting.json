@@ -7,7 +7,9 @@
  "field_order": [
   "landing_page",
   "courses_page_section",
-  "courses_page"
+  "courses_page",
+  "achievements_section",
+  "achievements_page"
  ],
  "fields": [
   {
@@ -26,11 +28,22 @@
    "fieldtype": "Table",
    "label": "Courses Page",
    "options": "Courses Page Banner"
+  },
+  {
+   "fieldname": "achievements_section",
+   "fieldtype": "Section Break",
+   "label": "Achievements"
+  },
+  {
+   "fieldname": "achievements_page",
+   "fieldtype": "Table",
+   "label": "Achievements Page",
+   "options": "Achievements Page Banner"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-12 17:57:26.608768",
+ "modified": "2024-12-13 11:10:24.734357",
  "modified_by": "Administrator",
  "module": "Course Management",
  "name": "Website Banner Setting",

@@ -8,8 +8,11 @@
  "field_order": [
   "name1",
   "status",
+  "payment_status",
   "column_break_ycfd",
-  "price"
+  "price",
+  "p_link",
+  "short_url"
  ],
  "fields": [
   {
@@ -34,11 +37,26 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Price"
+  },
+  {
+   "fieldname": "p_link",
+   "fieldtype": "Data",
+   "label": "P Link"
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Data",
+   "label": "Payment Status"
+  },
+  {
+   "fieldname": "short_url",
+   "fieldtype": "Data",
+   "label": "Short URL"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-10 17:18:11.695293",
+ "modified": "2024-12-13 18:20:33.141293",
  "modified_by": "Administrator",
  "module": "Course Management",
  "name": "Courses",
